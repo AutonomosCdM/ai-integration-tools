@@ -1,0 +1,49 @@
+{
+  "app_config": {
+    "name": "calendar-ai-bot",
+    "version": "0.1.0",
+    "log_level": "INFO",
+    "polling_interval_seconds": 300
+  },
+  "calendar_config": {
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar",
+      "https://www.googleapis.com/auth/calendar.events"
+    ],
+    "credentials_file": "calendar_credentials.json",
+    "token_file": "calendar_token.json",
+    "max_results": 100,
+    "timezone": "America/Santiago"
+  },
+  "llm_config": {
+    "provider": "groq",
+    "model": "llama3-70b-8192",
+    "temperature": 0.7,
+    "max_tokens": 1024
+  },
+  "cache_config": {
+    "enabled": true,
+    "max_size": 100,
+    "ttl_seconds": 3600,
+    "log_level": "INFO"
+  },
+  "event_processing": {
+    "analyze_content": true,
+    "detect_conflicts": true,
+    "process_recurring_events": true,
+    "max_lookback_days": 7,
+    "max_lookahead_days": 30
+  },
+  "organization_rules": {
+    "enabled": true,
+    "categorize_by_title": true,
+    "categorize_by_participants": true,
+    "optimize_schedule": true
+  },
+  "automation_rules": {
+    "enabled": false,
+    "send_notifications": false,
+    "auto_schedule_meetings": false,
+    "auto_decline_conflicts": false
+  }
+}
